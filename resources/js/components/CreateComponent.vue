@@ -26,11 +26,13 @@
 
 <script>
     export default {
+
         mounted() {
+
 
             //this.addStudent(),
 
-            console.log('Component mounted.')
+            console.log('Component mounted.');
         },
 
         data(){
@@ -45,6 +47,11 @@
 
         methods:{
 
+              student(){
+
+                         this.$root.$refs.A.allStudents();
+                    },
+
             addStudent(){
                 axios.post('students', {
                     name: this.name,
@@ -53,7 +60,8 @@
                 }).then(response => {
                     this.name = '',
                     this.email= '',
-                    this.phone = ''
+                    this.phone = '',
+                    this.student(),
                     console.log(response);
                 }).catch();
                 alert('Yeah');

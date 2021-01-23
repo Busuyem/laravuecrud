@@ -20,3 +20,5 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::post('students', 'StudentsController@addStudent');
+
+Route::get('students', 'StudentsController@allStudents');

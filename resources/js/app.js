@@ -21,6 +21,8 @@ window.Vue = require('vue');
 
 Vue.component('create-component', require('./components/CreateComponent.vue').default);
 
+Vue.component('show-component', require('./components/ShowStudentsComponent.vue').default);
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application

@@ -7,6 +7,14 @@ use Illuminate\Http\Request;
 
 class StudentsController extends Controller
 {
+
+    public function allStudents()
+
+    {
+        $students = Student::orderBy('created_at', 'DESC')->get();
+
+        return response()->json(['students'=>$students]);
+    }
     
     public function addStudent(Request $request)
     {
