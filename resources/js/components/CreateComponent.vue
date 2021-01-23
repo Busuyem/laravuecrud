@@ -47,10 +47,10 @@
 
         methods:{
 
-              student(){
+            student(){
 
-                         this.$root.$refs.A.allStudents();
-                    },
+                this.$root.$refs.A.allStudents();
+            },
 
             addStudent(){
                 axios.post('students', {
@@ -63,8 +63,10 @@
                     this.phone = '',
                     this.student(),
                     console.log(response);
-                }).catch();
-                alert('Yeah');
+
+                }).catch(error => console.log(error));
+
+               // alert('Yeah');
 
             }
         }

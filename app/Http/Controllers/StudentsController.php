@@ -11,7 +11,7 @@ class StudentsController extends Controller
     public function allStudents()
 
     {
-        $students = Student::orderBy('created_at', 'DESC')->get();
+        $students = Student::orderBy('created_at', 'DESC')->paginate(3);
 
         return response()->json(['students'=>$students]);
     }
@@ -24,6 +24,6 @@ class StudentsController extends Controller
         $student->phone = $request->phone;
         $student->save();
 
-        return $student;
+        return response()->json(['student'=>$student]);
     }
 }
